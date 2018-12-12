@@ -1,0 +1,553 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+body{
+    background: #f5f5f5;
+    font-size: 14px;
+    color: #444;
+}
+a{
+    color: #222;
+    text-decoration: none;
+    outline: 0;
+}
+.warpper{
+    width: 1496px;
+    margin: 0 auto;
+}
+.warpper .title{
+    background: #fff;
+    margin: 17px 0;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.02), 0 4px 8px 0 rgba(0,0,0,.02);
+    position: relative;
+}
+.warpper .title .title-fx{
+    padding: 20px 20px 15px;
+}
+
+.warpper .title .title-fx .biaoti{
+    margin-bottom: 20px;
+}
+.warpper .title .title-fx .biaoti h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #444;
+    text-shadow: none;
+    display: inline-block;
+}
+.warpper .title .title-fx .biaoti .fenlei{
+    display: inline-block;
+    border-left: 1px solid #ddd;
+    padding-left: 15px;
+    margin-left: 15px;
+    color: #999;
+}
+.warpper .title .title-fx .biaoti .fenlei a{
+    color: #9e7e6b;
+}
+.warpper .title .title-fx .biaoti .fenlei a:hover{
+    text-decoration: underline;
+    color: #9a0000;
+}
+.warpper .title .title-fx .jieshao{
+    color: #777;
+    line-height: 1.5;
+    padding-right: 250px;
+    max-height: 102px;
+    overflow: hidden;
+}
+.warpper .title .title-fx .gz{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+    width: 512px;
+}
+.warpper .title .title-fx .gz .btn{
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 0 12px;
+    height: 28px;
+    line-height: 28px;
+    background: #ededed;
+    border: 1px solid #ededed;
+    cursor: pointer;
+    text-decoration: none;
+    color:#444;
+    white-space: nowrap;
+    user-select: none;
+    text-align: center;
+}
+.warpper .title .title-fx .gz .lbtn{
+    text-shadow: none;
+    background: #ec414d;
+    color: #fff;
+    box-shadow: none;
+    border: 1px solid #ec414d;
+}
+.warpper .title .title-fx .gz .rbtn{
+    margin-left: 10px;
+}
+
+.warpper .title .title-fx .gz .lbtn:hover{
+    background: #d60b19;
+}
+.warpper .title .title-fx .gz .rbtn:hover{
+    background: #d9d9d9;
+}
+.warpper .title .title-fx .gz .fx-btn{
+    display: inline-block;
+    width: 180px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    position: relative;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo{
+    display: none;
+    position: absolute;
+    right: -22px;
+    top: 42px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,.2);
+    width: 150px;
+    text-align: left;
+    z-index: 99;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo .arr{
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+    left: 100px;
+    background: url(../img/sanjiao.png) 0 0 no-repeat;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+    position: relative;
+
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a:hover{
+    color: #221919;
+    text-decoration: none;
+    background-color: #F2F2F2;
+}
+
+.warpper .title .title-fx .gz .fx-btn .gengduo a i{
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    width: 18px;
+    height: 18px;
+    background: url(../img/icon.png) 0 -80px no-repeat;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.wb:hover i{
+     background-position: -40px -80px;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.qq i{
+    background-position: 0 -160px;    
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.qq:hover i{
+    background-position: -40px -160px;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.db i{
+    background-position: 0 -200px;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.db:hover i{
+    background-position: -40px -200px;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.rr i{
+    background-position: 0 -240px;
+}
+.warpper .title .title-fx .gz .fx-btn .gengduo a.rr:hover i{
+    background-position: -40px -240px;
+}
+
+.warpper .title .title-fx .gz .fx-btn .share-btns{
+    height: 28px;
+    width: 119px;
+    background: #fafafa;
+    border: 1px solid #ededed;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .share-btn{
+   height: 28px;
+   width: 30px;
+    background: url(../img/icon.png) no-repeat;
+   display: inline-block;
+   position: relative;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .weibo{
+    background-position: 6px 4px; 
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .weibo:hover{
+    background-position: -34px 4px;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .qzone{
+        background-position: 6px -36px;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .qzone:hover{
+    background-position: -34px -36px;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .weixin{
+    background-position: 6px -276px;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .weixin:hover{
+    background-position: -34px -276px;
+}
+.warpper .title .title-fx .gz .fx-btn .share-btns .share-btn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 16px;
+    right: 0;
+    top: 6px;
+    background: #ededed;
+ }
+ .warpper .title .title-fx .gz .fx-btn .share-btns .more{
+     height: 28px;
+     width: 24px;
+     display: inline-block;
+     background: url(../img/icon.png) -101px 9px no-repeat;
+ }
+
+ .warpper .title .title-cj{
+     background: #fafafa;
+     border-top: 1px solid #ededed;
+     height: 50px;
+     position: relative;
+ }
+ .warpper .title .title-cj .cj-logo{
+     display: block;
+     background: #fff;
+     height: 30px;
+     line-height: 30px;
+     text-decoration: none;
+     position: absolute;
+     left: 20px;
+     top: 10px;
+     color: #444;
+     padding-left: 30px;
+ }
+ .warpper .title .title-cj .cj-logo img{
+     height: 30px;
+     width: 30px;
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+ .warpper .title .title-cj .cj-logo span{
+     padding: 0 10px;
+ }
+ .warpper .title .title-cj .cj-logo:hover{
+    color:#c90000;
+}
+ .warpper .title .title-cj .cj-gz{
+     position: absolute;
+     right: 0;
+     top: 0;
+ }
+ .warpper .title .title-cj .cj-gz .tab{
+     display: inline-block;
+     padding: 0 20px;
+     line-height: 50px;
+     height: 50px;
+     border-left: 1px solid #ededed;
+     text-decoration: none;
+     color: #777;
+ }
+ .warpper .title .title-cj .cj-gz .cj{
+     background: #fff;
+     color: #444;
+     font-weight: 700;
+ }
+ .warpper .title .title-cj .cj-gz .cj:hover{  
+    color: #c90000; 
+}
+.warpper .title .title-cj .cj-gz .gz:hover{  
+    color: #c90000; 
+}
+ .warpper .content{
+     position: relative;
+     min-height: 600px;
+     margin: 16px auto 0;
+ }
+ .warpper .content ul{ 
+     width: 1496px;
+ }
+ .warpper .content ul li{
+     float: left;
+     margin: 0px 8px;
+    
+ }
+ .warpper .content ul li:first-child{
+     margin-left: 0px;
+ }
+ .warpper .content ul li:last-child{
+    margin-right: 0px;
+}
+ .warpper .content ul li .item{
+     margin-top:20px; 
+     width: 236px;
+     font-size: 12px;
+     background-color: #fff;
+     box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 4px 8px rgba(0,0,0,.02);
+     border-radius: 3px;
+     overflow: hidden;
+     
+ }
+ .warpper .content ul li .imgBox{
+     width: 236px;
+     overflow: hidden;
+ }
+ .warpper .content ul li .item img{
+     width: 236px;
+ }
+ .warpper .content ul li .item p{
+     display: block;
+     padding: 0 16px;
+     margin: 10px 0;
+     line-height: 1.35em;
+     overflow: hidden;
+     word-wrap: break-word;
+ }
+ .warpper .content ul li .item .xian{
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 20px;
+ }
+ .warpper .content ul li .item:hover{
+    box-shadow: 0 1px 3px rgba(0,0,0,.02), 0 16px 32px -4px rgba(0,0,0,.17);
+    transform: translateY(-1px);
+ }
+.loading{
+    display: none;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ccc;
+    text-align: center;
+    padding-top: 10px;
+}
+.dibu{
+    display: none;
+    position: fixed;
+    width: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 90px;
+    background: rgba(0,0,0,.5);
+    z-index: 999;
+    padding: 0 100px;
+    color: #fff;
+}
+.dibu .di-content::before{
+    content: "";
+    display: table;
+}
+.dibu .di-content::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.dibu .di-title{
+    margin: 25px 0 3px;
+    font-size: 20px;
+}
+.dibu .di-logo{
+    position: absolute;
+    right: 200px;
+    top: 25px;
+}
+.dibu .di-logo > span{
+    position: relative;
+    top: 14px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.dibu .di-logo>a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: url(../img/fx-logo.png) 0 0 no-repeat;
+    cursor: pointer;
+    margin-right: 13px;
+}
+.dibu .di-logo > a.weibo:hover{
+    background-position: 0 -60px;
+}
+.dibu .di-logo > a.qzone{
+    background-position: -60px 0;
+}
+.dibu .di-logo > a.qzone:hover{
+    background-position: -60px -60px;
+}
+.dibu .di-logo > a.douban{
+    background-position: -120px 0;
+}
+.dibu .di-logo > a.douban:hover{
+    background-position: -120px -60px;
+}
+.dibu .di-logo > a.weixin{
+    background-position: -180px 0;
+}
+.dibu .di-logo > a.weixin:hover{
+    background-position: -180px -60px;
+}
+.fd{
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+    z-index: 99992;
+}
+.fd .anniu{
+    display:block;
+    margin-bottom: 5px;
+    width: 40px;
+    height: 36px;
+    border-radius: 2px;
+    background: url(../img/fd.png) 8px 6px no-repeat;
+    background-color: #444;
+    background-color: rgba(0,0,0,.6);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+.fd .anniu:hover{
+    background-color: rgba(0,0,0,.7);
+}
+.fd .anniu.xiaoxi{
+    background: url(../img/fd.png) 8px -74px no-repeat;
+    background-color: rgba(0,0,0,.6);
+}
+.fd .anniu.tianjia{
+    background: url(../img/fd.png) 8px -34px no-repeat;
+    background-color: rgba(0,0,0,.6);
+    
+}
+.fd .xiaoxi-t{
+    display: none;
+    position: absolute;
+    left: -154px;
+    bottom: 0;
+    text-align: center;
+    border-radius: 2px;
+    width: 143px;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,.1);
+}
+.fd .xiaoxi-t .xiaoxi-tanchu{
+    padding: 10px 0;
+}
+.fd .xiaoxi-t .xiaoxi-tanchu>a{
+    display: block;
+    padding-left: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: left;
+    font-weight: 400;
+    position: relative;
+    color: #222;
+    cursor: pointer;
+}
+.fd .xiaoxi-t .xiaoxi-tanchu>a:hover {
+    color: #221919;
+    text-decoration: none;
+    background-color: #F2F2F2;
+}
+.fd .xiaoxi-t .xiaoxi-tanchu>a>i{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    width: 16px;
+    height: 16px;
+    background: url(../img/xb.png) 0 0 no-repeat;
+}
+.fd .xiaoxi-t .xiaoxi-tanchu>a>i.bz{
+    background-position: 0 -640px;
+}
+.fd .xiaoxi-t .xiaoxi-tanchu>a>i.yh{
+    background-position: 0 -680px;
+}
+.fd .xiaoxi-t .xiaoxi-tanchu>a>i.rg{
+    background-position: 0 -720px;
+}
+.fd .xiaoxi-t .arr{
+    position: absolute;
+    right: -6px;
+    bottom: 55px;
+    width: 6px;
+    height: 11px;
+    background: url(../img/yb.png) 0 0 no-repeat;
+    
+}
+
+
+.fd .tianjia-t{
+    display: none;
+    position: absolute;
+    left: -154px;
+    bottom: 0;
+    text-align: center;
+    border-radius: 2px;
+    width: 143px;
+    background: #fff;
+    box-shadow: 0 1px 8px rgba(0,0,0,.1);
+}
+.fd .tianjia-t .tianjia-tanchu{
+    padding: 10px 0;
+}
+.fd .tianjia-t .tianjia-tanchu>a{
+    display: block;
+    padding-left: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: left;
+    font-weight: 400;
+    position: relative;
+    color: #222;
+    cursor: pointer;
+}
+.fd .tianjia-t .tianjia-tanchu>a:hover {
+    color: #221919;
+    text-decoration: none;
+    background-color: #F2F2F2;
+}
+.fd .tianjia-t .tianjia-tanchu>a>i{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    width: 16px;
+    height: 16px;
+    background: url(../img/xb.png) 0 0 no-repeat;
+}
+.fd .tianjia-t .tianjia-tanchu>a>i.bz{
+    background-position: 0 -480px;
+}
+.fd .tianjia-t .tianjia-tanchu>a>i.yh{
+    background-position: 0 -520px;
+}
+.fd .tianjia-t .tianjia-tanchu>a>i.rg{
+    background-position: 0 -80px;
+}
+.fd .tianjia-t .arr{
+    position: absolute;
+    right: -6px;
+    bottom: 14px;
+    width: 6px;
+    height: 11px;
+    background: url(../img/yb.png) 0 0 no-repeat;
+    
+}
