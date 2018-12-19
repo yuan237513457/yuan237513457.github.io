@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *,a{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            text-decoration: none;
+        }
+        .warpper{
+            width: 400px;          
+            margin: 100px auto 0;
+            border: 1px solid #999;
+            border-radius: 6px;
+            padding: 10px 15px;
+        }
+        .sou{
+            
+            margin-bottom: 15px;
+        }
+        .sou input{
+            border: 1px solid #999;
+            border-radius: 4px;
+            height: 25px;
+            width: 220px;
+            padding-left: 10px;
+            outline: none;
+        }
+        .sou .btn{
+            cursor:pointer;
+            color: #2586fb;
+            margin: 0 3px;
+            padding: 0 3px;
+            border-radius: 4px;
+        }
+        .sou .btn.active{
+            background: #2586fb;
+            color: #fff;         
+        }
+        .warpper .lie{
+          
+            margin-bottom: 10px;
+        }
+        .warpper .lie li{
+            height: 50px;
+            padding-top: 10px;
+            border-bottom: 1px solid #999;
+            padding-bottom: 10px;
+        }
+        .warpper .lie li img{
+            
+            float: left;
+            margin-right: 10px;
+        }
+        .warpper .lie li .name{
+           padding-bottom: 10px;
+         
+        }
+        .warpper .lie li .dis{
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        <div class="sou">
+            <input type="text">
+            <span class="btn" sex='m'>Male</span>
+            <span class="btn" sex='f'>Female</span>
+            <span class="btn active" sex='a'>All</span>
+        </div>
+        <ul class="lie">
+            <!-- <li>
+                <img src="./images/1.png">
+                <p class="name">王港</p>
+                <p class="dis">颈椎不好</p>
+            </li>
+            <li>
+                <img src="./images/2.png">
+                <p class="name">刘颖</p>
+                <p class="dis">我是谁</p>
+            </li>
+            <li>
+                <img src="./images/3.png">
+                <p class="name">王秀英</p>
+                <p class="dis">我很好看</p>
+            </li>
+            <li>
+                <img src="./images/4.png">
+                <p class="name">刘金磊</p>
+                <p class="dis">你没有见过陌生的连</p>
+            </li>
+            <li>
+                <img src="./images/5.png">
+                <p class="name">刘飞翔</p>
+                <p class="dis">瓜皮刘</p>
+            </li> -->
+           
+           
+        </ul>
+    </div>
+    <script src="./js/debounce.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

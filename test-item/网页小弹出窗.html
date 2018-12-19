@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小弹窗</title>
+    <style>
+        .wrapper{
+            position: absolute;
+            top: 300px;
+            left: -400px;
+            width: 400px;
+            height: 80px;
+            background: orangered;
+           
+        }
+        .show{
+            position: absolute;
+            right: -40px;
+            top: 0px;
+            width: 40px;
+            height: 80px;
+            background: orange;
+            text-align: center;
+        }
+        ul{
+            list-style: none;
+        }
+        li{           
+            float: left;
+            padding: 10px;
+            
+        }
+        button{
+            width: 70px;
+            height: 40px;
+            background-color: bisque;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        span{
+            display: inline-block;
+            width: 24px;
+            text-align: center;
+            padding-top: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li><button>俯卧撑</button></li>
+            <li><button>跑步</button></li>
+            <li><button>仰卧起坐</button></li>
+            <li><button>睡觉</button></li>
+        </ul>
+        <div class="show">
+            <span>请选择</span>
+        </div>
+    </div>
+
+    <script>
+        var oDivwrapper = document.getElementsByTagName('div')[0];
+        var timer = null;
+        //弹出
+        oDivwrapper.onmouseenter = function(){
+            yundong(this,0);
+        }
+        //缩回
+        oDivwrapper.onmouseleave = function(){
+            yundong(this,-400);
+        }
+
+         function yundong(obj,target){
+            clearInterval(timer);
+            var speed;
+            timer = setInterval(function(){
+                speed = (target - obj.offsetLeft) / 7;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+               if(obj.offsetLeft === target){
+                   clearInterval(timer);                  
+               }else{
+                obj.style.left = obj.offsetLeft + speed + 'px'; 
+               }
+            },30);
+            
+        }
+
+    </script>
+</body>
+</html>

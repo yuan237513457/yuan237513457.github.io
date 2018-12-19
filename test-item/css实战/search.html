@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D-search</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            list-style:none;
+        }
+        .warpper{
+            width:600px;
+            height:50px;
+            background: linear-gradient(#f6f6f6,#eae8e8);
+            border:1px solid #aaa;
+            margin:100px auto;
+            border-radius:6px;
+            box-shadow: 0 5px 5px 0px #aaa, 0 5px 5px #bbb, 0 6px #444;
+        }
+        .warpper .inp{
+            float: left;
+             width: 80%;   
+             height: 30px;
+             margin: 8px 10px;
+             border-radius: 4px;
+             padding-left: 10px;
+        }
+        .warpper .inp:focus{
+            box-shadow: 2px 2px 2px #bbb inset;
+            border-color:#dad9d9;
+            outline: none;
+            border-radius: 4px;
+        }
+        .warpper .btn input{
+            width: 12%;
+            height: 30px;
+            background:linear-gradient(#0a90bd,#00699d);
+            border: 1px solid #005380;
+            margin: 9px 0;
+            border-radius: 4px;
+            color:#fff;
+            box-shadow: 2px 2px 2px #555;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="warpper">
+       
+            <input type="text" class="inp">
+       
+        <div class="btn">
+            <input type="button" value="GO">
+        </div>
+        <p style="padding-top: 30px">3D搜索框，主要用到 背景渐变 background:linear-gradient(方向，color1,color2...)<br>
+            阴影设置，box-shadow:横线偏移量，纵向偏移量，阴影半径，阴影大小，阴影颜色；后面可以添加多个，内阴影加 inset <br>
+        去除input框 点击后光标框颜色  outline:none;</p>
+    </div>
+</body>
+</html>

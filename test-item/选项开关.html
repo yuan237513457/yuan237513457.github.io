@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        .warpper{
+            width: 120px;
+            height: 20px;
+            margin: 100px auto;
+            position: relative;
+
+        }
+        .switch,
+        .switch input,
+        .switch input:before{
+            width: 30px;
+            height: 14px;
+        }
+        .switch input{
+            position: absolute;
+            right: 0;
+        }
+        .switch input:before{
+            content: '';
+            display: inline-block;
+            position: relative;
+            background-color: #fff;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 1px 1px #ececf3;
+            cursor: pointer;
+        }
+        .switch input:after{
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            top: 2px;
+            left: 3px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transform: .2s left, .2s background-color;
+        }
+        .switch input:checked:after{
+            left: 15px;
+            background: #36a6fa;
+            transition: .2s left, .2s background-colcr;
+        }
+    </style>
+</head>
+<body>
+    <div class="warpper">
+        <span><span class="action">开启</span>WLAN</span>
+        <label class="switch">
+            <input type="checkbox" name="switch" id="switch">
+        </label>
+    </div>
+    <script src="./jquery-1.11.3.js"></script>
+    <script>
+      $('#switch').change(function() {
+            $('.action').text(this.checked ? '关闭' : '开启');
+        });
+
+    </script>
+</body>
+</html>

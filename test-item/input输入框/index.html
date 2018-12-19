@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .search{
+            width: 500px;
+            height: 60px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="search"></div>
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/index.js"></script>
+
+    <script>
+
+        function dealData(data){
+            var dataList = data.result;
+            $('.search > ul').remove();
+            var oUl = $('<ul class="itemList"></ul>');
+            for(var i = 0; i < dataList.length; i++){
+                var oLi = $('<li></li>');
+                oLi.html(dataList[i][0]).appendTo(oUl);
+                oLi.css({padding:'5px 0'})         
+            }
+            oUl.appendTo($('.search'));
+            oUl.css({
+                listStyle:'none',
+                width:400,
+                border:'1px solid #eee',
+                margin:0,
+                padding:0,
+            }) 
+            
+        }
+
+        $('.search').search({
+            key:'callback',
+            jsonpCallback:'dealData',
+            url:'https://suggest.taobao.com/sug',
+            type:'GET',
+            inputWidth:400,
+            height:50,
+            fontSize:24,
+            success:dealData,
+            dataName:'q',
+        })
+    </script>
+</body>
+</html>

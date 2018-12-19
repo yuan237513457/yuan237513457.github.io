@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>导航栏</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        ul{ 
+            position: relative;
+            width: 600px;
+            height: 80px;
+            margin: 100px auto 0;
+        }
+        ul li.nav{
+            width: 148px;
+            height: 78px;
+            border: 1px solid #000;
+            font-size: 24px;
+            text-align: center;
+            line-height: 78px;
+            float: left;
+            color: red;
+        }
+        ul li.bg{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 150px;
+            height: 80px;
+            background: orange;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="nav">英语</li>
+        <li class="nav">数学</li>
+        <li class="nav">化学</li>
+        <li class="nav">语文</li>
+        <li class="bg"></li>
+    </ul>
+
+        <script>
+            //运用slice方法，把类数组转变成数组
+            var oNav =Array.prototype.slice.call(document.getElementsByClassName('nav'),0);
+            var oBg = document.getElementsByClassName('bg')[0];
+            //也可以用for循环 这里使用forEach代替
+            oNav.forEach(function(ele,index){
+                //当鼠标经过时的事件
+                ele.onmouseenter = function(){
+                    //获取当前nav的位子
+                    var newLeft = this.offsetLeft;
+                    //两个参数，第一个为背景，第二个为当前需要背景的位子
+                    yidong(oBg,newLeft);
+                }
+            })
+
+            function yidong(obj,target){
+                clearInterval(obj.timer);
+                //speed速度，a加速度,u摩擦力
+                var speed = 10, a, u = 0.8;
+                //开启当前背景定时器
+                obj.timer = setInterval(function(){
+                    //做缓冲运动，目标点位子-当前位子，越小速度越小
+                    a = (target - obj.offsetLeft) / 8;
+                    //运动方向
+                    speed = speed + a;
+                    //增加阻力
+                    speed = speed * u;
+                    //停止条件，当速度绝对值小于1，或者位子绝对值小于1停止，否则继续执行
+                    if(Math.abs(speed) <= 1 && Math.abs(target - obj.offsetLeft) <= 1){
+                        clearInterval(obj.timer);
+                        obj.style.left = target + 'px';
+                    }else{
+                        obj.style.left = obj.offsetLeft + speed + 'px';
+                    }
+                },30)
+            }
+
+            
+        </script>
+
+</body>
+</html>

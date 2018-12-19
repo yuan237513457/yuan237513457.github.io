@@ -1,0 +1,25 @@
+@charset "utf-8";
+body{ background-color:#ececec;font-family:"微软雅黑";}
+	.g{text-align:center; color:green; font-family:"微软雅黑"; padding:16px;}
+	.order_box{ width:96%;margin:0 auto;font-size:14px; background-color:#fff;}
+	.title{ background-color:#f5f5f5; line-height:32px; font-size:15px; padding-left:6%;}
+	.choos_package_box{ padding: 10px 6% 10px 6%; box-sizing:border-box;}
+	.choos_package_box .label_left{ float:left; width:28%; line-height:32px; color:#666; font-size:14px;}
+	.choos_package_box p{ float:left;width:70%; margin-left:1%;}
+	.choos_package_box p label{ line-height:32px;}
+	.info_box{ width:100%; height:40px;padding: 0 6% 0 6%; box-sizing:border-box;  margin-bottom:6px;}
+	.info_box label{  width:28%; line-height:32px; display:inline-block;}
+	.info_box input{line-height: 32px;border: 1px solid #b3b3b3;font-size: 14px; color:#666;width: 70%; float:none; padding:0 4px; box-sizing:border-box; border-radius:4px;}
+	.info_box select{height: 30px;line-height: 30px;border: 1px solid #b3b3b3;font-size: 14px; color:#666;width: 100%;padding:0 4px; box-sizing:border-box;margin-bottom:10px; border-radius:4px; float:none;}
+	.note_box{ width:100%; height:80px;padding: 0 6% 0 6%; box-sizing:border-box;  margin-bottom:6px; padding-top:10px;}
+	.note_box label{ float:left; width:28%; padding-top:4px;}
+	.note_box p{float:none;box-sizing: border-box;width: 70%;height: 80px; display:inline-block; margin-left:1%;}
+	.note_box p textarea{ font-size: 14px; color:#666; padding:6px; line-height:20px; width:100%; border: 1px solid #b3b3b3; box-sizing:border-box; border-radius:4px;}
+	#submit{ display: block;width: 92%;height: 50px;margin: 20px auto;line-height: 50px;text-align: center;background-color: #da2f2f;border-radius: 6px;color: #ffffff;font-size: 16px;}
+	
+	input[type=radio]{ -webkit-appearance: none;appearance: none;background: #fff;width:16px; height:16px;border: 1px solid #dcdcdc;background: #fff; border-radius:1em; box-sizing:border-box; vertical-align:middle; position:relative;}
+  	input[type=radio]:checked:after{ content: '';display: block;position:absolute;top: 3px;left: 3px;width: 8px;height: 8px;background: #666;border-radius: 1em;}
+	
+	.unselect{ width:100%; display:inline-block; text-align:center; border:1px solid #d9d9d9; line-height:32px; margin:4px 0;}
+	.unselect input{ display:none;}
+	.select{ border:solid 1px #c30008; color:#da2f2f; background:url(../images/sele.gif) right bottom no-repeat; background-size:10px;}

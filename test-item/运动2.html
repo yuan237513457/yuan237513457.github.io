@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运动2</title>
+    <style>
+        /* div{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100px;
+            height: 100px;
+            background: orange;
+            border-radius: 50%;
+        }
+        span{
+            position: absolute;
+            left: 300px;
+            top: 0px;
+            width: 1px;
+            height: 100px;
+            background: #ccc;
+        } */
+        /* *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        ul {
+            position: relative;
+            width: 600px;
+            height: 80px;
+            margin: 100px auto 0;
+        }
+        ul li.nav{
+            height: 78px;
+            border: 1px solid #000;
+            width: 148px;
+            color: #f00;
+            text-align: center;
+            line-height: 78px;
+            float: left;
+        }
+        ul li.bg{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 80px;
+            background: #f40;
+            opacity: 0.5;
+        } */
+        div{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100px;
+            width: 100px;
+            background: orange;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div></div>
+    <span></span> -->
+    <!-- <ul>
+        <li class="nav">科目一</li>
+        <li class="nav">科目二</li>
+        <li class="nav">科目三</li>
+        <li class="nav">科目四</li>
+        <li class="bg"></li>
+    </ul> -->
+    <div></div>
+    <script>
+
+        var oDiv = document.getElementsByTagName('div')[0];
+        var lastX = oDiv.offsetLeft;  //元素距离左边框的距离
+        var lastY = oDiv.offsetTop;   //元素距离上边框的距离
+        oDiv.onmousedown = function (e){
+            clearInterval(this.timer);  //清除定时器
+            var event = e || window.event;  
+            var disX = e.clientX - this.offsetLeft;  //鼠标按下时DIV X轴距离
+            var disY = e.clientY - this.offsetTop;   //鼠标按下时DIV Y轴距离
+            var that = this;            
+            
+            var iSpeedX = 0;
+            var iSpeedY = 0;
+            document.onmousemove = function (e) {
+                var newLeft = e.clientX - disX;     //鼠标移动时的DIV X轴距离
+                var newTop = e.clientY - disY;      //鼠标移动时的DIV Y轴距离
+
+                iSpeedX = newLeft - lastX;  //移动时X距离-初始时X距离    
+                iSpeedY = newTop - lastY;   //移动时Y距离-初始时Y距离
+
+                lastX = newLeft;            // 移动后的X轴距离
+                lastY = newTop;             // 移动后的Y轴距离
+
+                that.style.left = newLeft + 'px';   //鼠标移动后 DIV X轴坐标
+                that.style.top = newTop + 'px';     //鼠标移动后 DIV Y轴坐标
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;        //鼠标抬起 清除移动事件
+                document.onmouseup = null;          //鼠标抬起 清除抬起事件
+                startMove(that,iSpeedX,iSpeedY);
+            }
+        };
+
+
+
+
+
+        function startMove(obj,iSpeedX,iSpeedY){
+            clearInterval(obj.timer);   //清除定时器
+            var g = 6;  //加速度
+            obj.timer = setInterval(function(){
+                iSpeedY += g;   //恒定加速度
+                var newLeft = obj.offsetLeft + iSpeedX; //  DIV的距离左边框最新位置
+                var newTop = obj.offsetTop + iSpeedY;   //  DIV的距离上边框最新位置
+                console.log(iSpeedY)
+                if(newTop >= document.documentElement.clientHeight - obj.offsetHeight){ //浏览器高度-div高度
+                    iSpeedY *= -1;  //上下取反
+                    iSpeedY *= 0.8; //增加Y轴摩擦力
+                    iSpeedX *= 0.8; //增加X轴摩擦力
+                    newTop = document.documentElement.clientHeight - obj.offsetHeight;
+                }
+                if(newTop <= 0){   
+                    iSpeedY *= -1;  //上下反向边缘取反
+                    iSpeedY *= 0.8; //增加Y轴摩擦力
+                    iSpeedX *= 0.8; //增加X轴摩擦力
+                    newTop = 0;
+                }
+                if(newLeft >= document.documentElement.clientWidth - obj.offsetWidth){
+                    iSpeedX *= -1;     //左右取反
+                    iSpeedY *= 0.8;     //增加Y轴摩擦力
+                    iSpeedX *= 0.8;     //增加X轴摩擦力
+                    newLeft = document.documentElement.clientWidth - obj.offsetWidth;
+                }
+                if(newLeft <= 0){
+                    iSpeedX *= -1;
+                    iSpeedY *= 0.8;
+                    iSpeedX *= 0.8;
+                    newLeft = 0;
+                }
+                if(Math.abs(iSpeedX) < 1){      //X轴速度绝对值 < 1 ，速度为0
+                    iSpeedX = 0;        
+                }
+                if(Math.abs(iSpeedY) < 2){       //Y轴速度绝对值 < 1 ，速度为0
+                    iSpeedY = 0;
+                }
+                if(iSpeedX == 0 && iSpeedY == 0 && newTop === document.documentElement.clientHeight - obj.clientHeight){
+                    clearInterval(obj.timer);
+                    console.log('over');
+                    
+                }
+                
+                obj.style.left = newLeft + "px";    //DIV当前位子X坐标
+                obj.style.top = newTop + "px";      //DIV当前位子的Y坐标
+            },30)
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     var oLiArray = Array.prototype.slice.call(document.getElementsByClassName('nav'),0);
+    //     var oBg = document.getElementsByClassName('bg')[0];
+
+    //     oLiArray.forEach(function(ele,index){
+    //         ele.onmouseenter = function(){
+    //             var newLeft = this.offsetLeft;
+    //             startMove(oBg,newLeft);
+    //         }
+    //     })
+
+    // function startMove(obj,target){
+    //     clearInterval(obj.timer);
+    //     var iSpeed = 20;
+    //     var a,u = 0.8;
+    //     obj.timer = setInterval(function(){
+    //         a = (target - obj.offsetLeft) / 8;
+    //         iSpeed = iSpeed + a;
+    //         iSpeed = iSpeed * u;
+    //         if(Math.abs(iSpeed) <= 1 && Math.abs(target - obj.offsetLeft) <= 1){
+    //             clearInterval(obj.timer);
+    //             obj.style.left = target + "px";
+    //         }
+    //         obj.style.left = obj.offsetLeft + iSpeed + 'px';
+    //     },30);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var oDiv = document.getElementsByTagName('div')[0];
+    // oDiv.onclick = function(){
+    //     startMove(this);
+    // }
+    // function startMove(obj){
+    //     clearInterval(obj.timer);
+    //     var iSpeed = 40;
+    //     var a,u = 0.8;
+    //     obj.timer = setInterval(function(){
+    //         a = (300 - obj.offsetLeft) / 8;
+    //         iSpeed = iSpeed + a;
+    //         iSpeed = iSpeed * u;
+    //         if(Math.abs(iSpeed) < 1 && Math.abs(300 - offsetLeft) < 1){
+    //             clearInterval(obj.timer);
+    //         }
+    //         obj.style.left = obj.offsetLeft + iSpeed + 'px';
+    //     },30);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+    // function startMove(obj){
+    //     clearInterval(obj.timer);
+    //     var iSpeed = 40;
+    //     var a = -3;
+    //     obj.timer = setInterval(function(){
+    //         iSpeed = iSpeed + a;
+    //         obj.style.left = obj.offsetLeft + iSpeed + 'px';
+    //     },30)
+    // }
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

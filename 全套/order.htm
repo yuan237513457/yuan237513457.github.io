@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" class="detail_standard">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>竖版电热水器水龙头</title>
+<link href="css/global.css" rel="stylesheet">
+<link href="css/oder.css" rel="stylesheet" type="text/css">  
+<script src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/ajaxJsonp.js"></script>
+</head>
+
+<body>
+ <div class="mod_bar">
+        <a href="javascript: history.go(-1);" id="indexBack" class="mod_bar_back">返回</a>
+        <div class="mod_bar_tit" id="indexTitle">确认信息</div>
+</div>
+ <form class="order_submit" id="ordeForm">
+        <input id="ShopID" type="hidden" name="ShopID" value="74e07c89-c85e-41f7-910d-89224a58afa1" />
+        
+        <p class="g" >全国货到付款，快递人员送货上门，当面结算货款，全部商品包邮免运费。</p>
+    	<div class="order_box">
+      		<div class="title">产品选择</div>
+                <div class="choos_package_box"> 
+                    <label class="unselect select" >
+                        <input  type="radio" data-value="298" checked="checked" value="竖版电热水器水龙头（底部进水）1套 298元" name="package" id="radio1"/>
+                       
+                       竖版电热水器水龙头（底部进水）1套 298元
+                    </label>    
+                    <label class="unselect" >
+                        <input  type="radio" data-value="298" value="竖版电热水器水龙头（侧边进水）1套 298元" name="package" id="radio2"/>
+                       
+                         竖版电热水器水龙头（侧边进水）1套 298元
+
+                    </label><label class="unselect" >
+                   
+                        <input  type="radio" data-value="596" value="竖版电热水器水龙头（底部进水）2套 596元" name="package" id="radio3"/>
+                         竖版电热水器水龙头（底部进水）2套 596元
+                    </label>  
+                    <label class="unselect" >
+                   
+                        <input  type="radio" data-value="596" value="竖版电热水器水龙头（侧边进水）2套 596元" name="package" id="radio4"/>
+                         竖版电热水器水龙头（侧边进水）2套 596元
+                    </label>  
+               </div>    
+       </div>  
+       <br>   
+       <div class="order_box" style="padding-bottom:60px;"> 
+       	   <div class="title">信息填写</div>
+           <br>
+           
+           <!--<div class="info_box">
+            <label>尺码</label>
+             <span style="width:71%; display:inline-block; float:right;">
+
+            	<select id="chicun" name="chicun">
+				<option value="39码" selected="selected">39</option>
+				<option value="40码">40</option>
+				<option value="41码">41</option>
+				<option value="42码">42</option>
+				<option value="43码">43</option>
+				<option value="44码">44</option>
+				</select>
+                </span>
+                </div>-->
+
+           <div class="info_box">
+             <label>收货人</label>
+               	<input  name="name" class="input" id="name" placeholder="请输入收货人姓名"/>
+           </div>
+           <div class="info_box">
+                <label>手机号码</label>
+                <input  size="20"  name="tel" class="input" id="tel"  placeholder="请输入您的手机号码"/>
+           </div>      
+           <div class="info_box" style=" margin-bottom:0;">
+                <label>详细地址</label>
+                <input  name="address" class="input" id="address"  placeholder="请输入您的收货地址"/>
+           </div>                   
+           <div class="choos_package_box" style="height:40px; padding-top:0;">
+                <label class="label_left">付款方式</label>
+                <p>
+                    <input type="radio" checked="checked" value="1" name="paytype" id="paytype" />
+                    <label>货到付款</label>
+                </p>
+           </div>  
+           <div class="note_box">
+                <label>详细备注</label>
+                <p>
+                    <textarea name="message" id="message" rows="5" placeholder="例：白天地址没人，请尽量安排其他时间送货"></textarea>
+                </p>
+           </div>                        
+  
+  	  </div>    
+   
+      <div>
+         <input  id="submit" name="submit" value="确认下单 (货到付款)"  type="button" style="-webkit-appearance: none;appearance: none;-moz-appearance:none;"/>
+      </div> 
+   
+</form>     
+
+<script>
+	$(document).ready(function(e) {
+		
+        $(".choos_package_box input[type='radio']").click(function(){
+		
+			if($(this).parent("label").hasClass("select"))
+			{
+			   $(this).attr("checked",true)
+			}
+			
+			else{
+				
+				$(".select").removeClass("select")
+				$(this).parent("label").addClass("select")
+				
+			}
+					
+        })	
+    });
+</script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 600px;
+        }
+    span{
+        height: 100px;
+        width: 1px;
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 300px;
+    }
+    </style> -->
+
+</head>
+
+<body>
+    <!-- <div></div>
+     <span></span> -->
+
+    <script>
+
+
+
+
+
+        var arr = [33, 22, 11, 55, 44, 88, 66];
+
+        function bubblesort(arr) {
+            var len = arr.length, newArr;
+            for (var i = 0; i < len - 1; i++) {
+                for (var j = 0; j < len - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        newArr = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = newArr;
+
+                    }
+                }
+            }
+            return arr;
+        }
+
+
+        //冒泡排序
+        // function Bubblesort(arr) {
+        //     for (var i = 0; i < arr.length - 1; i++) {
+        //         for (var j = 0; j < arr.length - 1 - i; j++) {
+        //             if(arr[j] > arr[j + 1]){
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+
+
+        //快排
+
+        // 　function quickSort(arr){
+        //     //如果数组<=1,则直接返回
+        //     if(arr.length<=1){return arr;}
+        //     var pivotIndex=Math.floor(arr.length/2);
+        //     //找基准，并把基准从原数组删除
+        //     var pivot=arr.splice(pivotIndex,1)[0];
+        //     //定义左右数组
+        //     var left=[];
+        //     var right=[];
+
+        //     //比基准小的放在left，比基准大的放在right
+        //     for(var i=0;i<arr.length;i++){
+        //         if(arr[i]<=pivot){
+        //             left.push(arr[i]);
+        //         }
+        //         else{
+        //             right.push(arr[i]);
+        //         }
+        //     }
+        //     //递归
+        //     return quickSort(left).concat([pivot],quickSort(right));
+        // }                
+
+
+
+
+// var str = "aasdfsfddsdffeadfsfd"
+//     String.prototype.quchong = function(){
+//         var obj = {};
+//         var str = '';
+//         for(var i = 0 ; i< this.length; i ++){
+//             if(!obj[this[i]]){
+//                 obj[this[i]] = true;
+//                 str += this[i];
+//             }
+//         }
+//         return str;
+//     }
+
+
+
+
+
+
+            //向上取整 ceil  向下取整  floor   小球左右缓冲运动
+        // var oDiv = document.getElementsByTagName('div')[0];
+        // var timer = null;
+        // oDiv.onclick = function(){
+        //     yundong(this);
+        // }
+
+        // function yundong(obj){
+        //     clearInterval(timer);
+        //     var speed;
+        //     timer = setInterval(function(){
+        //         speed = (300 - obj.offsetLeft) / 7;
+        //         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+        //        if(obj.offsetLeft === 300){
+        //            clearInterval(timer);
+
+        //        }else{
+        //         obj.style.left = obj.offsetLeft + speed + 'px'; 
+        //        }
+        //     },30)
+
+        // }
+
+
+
+
+
+
+
+
+
+            // 封装type方法
+        // function type(target) {
+        //     var ret = typeof(target);
+        //     var template = {
+        //         "[object Array]" : "array",
+        //         "[object Object]" : "object",
+        //         "[object Number]" : "number - object",
+        //         "[object Boolean]" : "boolean - object",
+        //         "[object String]" : "string - object"
+        //     }
+        //     if(target === null) {
+        //         return "null";
+        //     }
+        //     if(ret == 'object'){
+        //        var str = Object.prototype.toString.call(target);
+        //         return template[str];
+        //     }else {
+        //         return ret;
+        //     }
+        // }
+
+            // 原型链上数组去重
+    // var arr = [1,1,1,2,2,2,3,3,4,4,4,4,];
+
+    //  Array.prototype.unique = function () {
+    //      var temp = {}, //接收数组内容
+    //          arr = [],  //要返回的新数组
+    //          len = this.length;
+    //     for(var i = 0; i < len; i ++) {
+    //         if(!temp[this[i]]){  //取类数组没有赋值的位
+    //             temp[this[i]] = "abc";
+    //             arr.push(this[i]);
+    //         }
+    //     }
+    //     return arr;
+    //  }
+
+        //原始值包装类解析
+
+        //原始值跟引用值的储存空间不同，原始值储存在栈内存中，不能有属性和方法；
+
+        // var str = "abc";
+        //     // new String('abc').length;
+        // //原始值没有属性方法，当调用他的方法时，内部会产生包装类
+        // //使得str = "abc"，会在内部转化成 对象字符串方法new String("arc");
+        // //所以可以访问到length属性；
+        // console.log(str.length)
+
+        // this 指向问题
+
+        // 1.预编译 this -- > window
+        // 2.谁调用的 this 指向谁
+        // 3.call apply
+        // 4.全局 this -- > window
+
+       //***克隆
+
+        // var obj = {
+        //     name : "abc",
+        //     wife : {
+        //         name : "xiaoli",
+        //         son : {
+        //             name : "xiaobai"
+        //         }
+        //     }
+        // }
+        // var obj1 = {
+
+        // }
+         //原始值克隆的 浅层克隆
+        //使用 for in 循环，把 Obj里的值依次付给 obj1
+        // for( var prop in obj) {
+        //     obj1[prop] = obj[prop];
+        // }
+
+        //深层克隆
+
+        // function clone(origin,target) {
+        //     var target = target || {},
+        //         toStr = Object.prototype.toString,
+        //         arrStr = "[object Array]";
+
+        // for(var prop in origin) {
+        //     if(origin.hasOwnProperty(prop)){
+        //         if(origin[prop] !== "null" && typeof(origin(prop)) == 'object'){
+        //             target[prop] = toStr.call(origin[prop]) == arrStr ? [] : {};
+        //             clone(origin[prop],target[prop]);
+        //         }else{
+        //             target[prop] = origin[prop];
+        //         }
+        //     }
+        // }
+        // return target;
+        // }
+        // clone();
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

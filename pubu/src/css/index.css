@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.warpper{
+    width: 80%;
+    min-width: 930px;
+    margin: 0 auto;
+    text-align: center;
+}
+.warpper ul{
+    display: inline-block;
+}
+.warpper ul li{
+    float: left;
+}
+.warpper ul li .item{
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0 5px 10px;
+}
+
+.warpper ul li .imgBox{
+    width: 200px;
+    overflow: hidden;
+}
+.warpper ul li .item img{
+    width: 200px;
+}
+.warpper ul li .item p{
+    text-align: left;
+}
+.loading{
+    display: none;
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ccc;
+}

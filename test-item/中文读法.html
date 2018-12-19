@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = "1520501010101100";
+		function retHan(str) {
+			var strParts = '';
+			str = str.toString().split('').reverse().join('');
+			for(var i = 1; i < str.length + 1; i ++){
+				var flag = '';
+				if(i == 5){
+					strParts += "万"
+				}else if(i == 9){
+					strParts += "亿"
+				}else if(i == 13){strParts += "兆"}
+				
+				if(str[i-1] != 0 ){
+					if(i % 4 == 0) {
+						strParts += "千";
+					}else if(i % 4 == 3) {
+						strParts += "百";
+						if(str[i] == 0){flag = "零";}
+					}else if(i % 4 == 2) {
+						strParts += "十";
+						if(str[i] == 0){flag = "零";}
+					}
+				}
+				switch(str[i-1]){
+					case '1':
+						strParts += "一";
+						break;
+					case '2':
+						strParts += "二";
+						break;
+					case '3':
+						strParts += "三";
+						break;
+					case '4':
+						strParts += "四";
+						break;
+					case '5':
+						strParts += "五";
+						break;
+					case '6':
+						strParts += "六";
+						break;
+					case '7':
+						strParts += "七";
+						break;
+					case '8':
+						strParts += "八";
+						break;	
+					case '9':
+						strParts += "九";
+						break;
+				}
+				strParts += flag;
+			}
+
+			return strParts.split('').reverse().join('');
+			
+		}
+		var HanStr = retHan(str);
+		console.log(HanStr)
+	</script>
+</body>
+</html>
