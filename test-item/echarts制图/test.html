@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="height:400px;width:100%;" id="main1"></div>
+    <script type="text/javascript" src="./echarts.min.js"></script>
+</body>
+<script>
+
+    var echart = echarts.init(document.getElementById('main1'));
+    var option = {
+        title: {
+            text: '模拟商店一周销售情况',
+            subtext: '虚拟数据'
+        },
+        legend: {
+            data: ['购买金额', '销售金额']
+        },
+        xAxis: {
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+
+        },
+        tooltip: {
+            show: true,
+            formatter: '系列名:{a}<br />类目:{b}<br />数值:{c}'
+        },
+        series: [{
+            name: '购买金额',
+            type: 'bar',
+            data: [200, 312, 431, 241, 175, 275, 369],
+            color:['rgb(164,205,238)','rgb(42,170,227)','rgb(25,46,94)','rgb(195,229,235)'],
+            markPoint: {
+                data: [
+                    { type: 'max', name: '最大值' },
+                    { type: 'min', name: '最小值' }
+                ]
+            },
+            markLine: {
+                data: [
+                    {
+                        type: 'average', name: '平均值', itemStyle: {
+                            normal: {
+                                color: 'green'
+                            }
+                        }
+                    }
+                ]
+            }
+        }, {
+            name: '销售金额',
+            type: 'line',
+            data: [321, 432, 543, 376, 286, 298, 400],
+            markPoint: {
+                data: [
+                    { type: 'max', name: '最大值' },
+                    { type: 'min', name: '最小值' }
+                ]
+            },
+            markLine: {
+                data: [
+                    {
+                        type: 'average', name: '平均值', itemStyle: {
+                            normal: {
+                                color: 'blue'
+                            }
+                        }
+                    }
+                ]
+            }
+        }]
+    };
+    echart.setOption(option);
+
+</script>
+
+</html>

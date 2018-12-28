@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            display: block;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .warpper{
+            width: 300px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+        .warpper .content{
+            width: 0;
+            height: 30px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file">
+    <img src="" alt="">
+    <div class="warpper">
+        <div class="content"></div>
+    </div>
+    <span class="text"></span>
+    <button class="abort">终止</button>
+    <script>
+        var reader = new FileReader();
+        var inp = document.getElementsByTagName('input')[0];
+        var img = document.getElementsByTagName('img')[0];
+        var content = document.getElementsByClassName('content')[0];
+        var text = document.getElementsByClassName('text')[0];
+        var btn = document.getElementsByClassName('abort')[0];
+        inp.onchange = function () {
+            console.log(inp.files);
+            // 将文件读取为DataURL编码base64
+            reader.readAsDataURL(inp.files[0]);
+        }
+        //读取开始
+        reader.onloadstart = function (e) {
+            console.log('start', e);
+        }
+        //读取中
+        reader.onprogress = function (e) {
+            console.log('progress', e);
+            var precent = e.loaded / e.total * 100;
+            var width = Math.round(300 * precent / 100);
+            content.style.width = width + 'px';
+            text.innerHTML = Math.round(precent) + '%';
+        }
+        //读取结束
+        reader.onload = function (e) {
+            console.log('loaded', e);
+            img.src = this.result;
+        }
+        //完成
+        reader.onloadend = function (e) {
+            console.log('end', e);
+        }
+        btn.onclick = function () {
+            //终止上传
+            reader.abort();
+        }
+    </script>
+</body>
+
+</html>

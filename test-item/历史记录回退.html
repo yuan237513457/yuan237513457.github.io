@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="inp" id="inp">
+    <button id="btn" type="submit">提交</button>
+    <ul id="list"></ul>
+    <script>
+        var inp = document.getElementById('inp');
+        var btn = document.getElementById('btn');
+        var list = document.getElementById('list');
+
+        var data = [{
+            name: '渡一'
+        }, {
+            name: '渡一教育'
+        }, {
+            name: 'HTML'
+        }, {
+            name: 'css'
+        }, {
+            name: 'js'
+        }, {
+            name: 'xxx'
+        }, {
+            name: '前端'
+        }];
+
+        function renderDom(data) {
+            var str = '';
+            for (var i = 0; i < data.length; i++) {
+                str += '<li>' + data[i].name + '</li>'
+            }
+            list.innerHTML = str;
+        }
+        renderDom(data);
+
+        btn.onclick = function (e) {
+            var key = inp.value;
+            var dataList = data.filter(function (item, index) {
+                return item.name.indexOf(key) > -1;
+            });
+            renderDom(dataList);
+            history.pushState({
+                key: key,
+            }, null, '#a');
+        }
+
+        window.addEventListener('popstate', function (e) {
+            console.log(e);
+            var key = e.state ? e.state.key : '';
+            var dataList = data.filter(function (item, index) {
+                return item.name.indexOf(key) > -1;
+            });
+            inp.value = key;
+            renderDom(dataList);
+        }, false)
+    </script>
+</body>
+
+</html>

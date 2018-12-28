@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* svg {
+            border: 1px solid #000;
+        }
+
+        line {
+            stroke: red;
+        }
+
+        rect {
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        polygon {
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        ellipse {
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        .kuang {
+            fill: transparent;
+            stroke: #000;
+            stroke-width: 2px;
+        }
+
+        text {
+            stroke-width: 2px;
+            stroke: red;
+        } */
+        .jdt{
+            stroke: red;
+            stroke-width: 15px;
+            stroke-linecap: round;
+            stroke-dasharray: 300px;
+            stroke-dashoffset: 300px;
+            animation: move 2s linear infinite alternate;
+        }
+        @keyframes move{
+            0%{
+                stroke-dashoffset: 300px;
+            }
+            100%{
+                stroke-dashoffset:0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="500" height="500">
+
+        <!-- 进度条小动画 -->
+            <line x1 = '100' y1 = '100' x2 = '400' y2 = '100' class="jdt"></line>
+        <!-- 小图形画 -->
+        <!-- <rect x='50' y='49' width='150' height='150' rx='10'ry='20'></rect>
+        <circle r="19" cx="100" cy="100" class="kuang"></circle>
+        <circle r="5" cx="105" cy="105" class="yan"></circle>
+        <circle r="5" cx="155" cy="105" class="yan"></circle>
+        <circle r="19" cx="150" cy="100" class="kuang"></circle>
+        <ellipse rx="30" ry="15" cx="125" cy="165"></ellipse>
+        <polyline points="60 50, 75 35, 100 50, 125 35, 150 50,175 35, 190 50"></polyline>
+
+        <polygon points="125 125,130 140,120 140"></polygon>
+        <text x="85" y="220">hello,world</text> -->
+
+        <!-- 渐变填充 -->
+        <!-- <defs>
+                <radialGradient id="bg2" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0%" style="stop-color:green;"/>
+                    <stop offset="100%" style="stop-color:red;"/>
+                </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="500" height="500" style="fill:url(#bg2)"/> -->
+        <!-- <defs>
+            <filter id="Gaussian_Blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+            </filter>
+        </defs>
+        <rect x="0" y="0" width="500" height="500" fill='yellow' style="filter:url(#Gaussian_Blur)" /> -->
+    </svg>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>

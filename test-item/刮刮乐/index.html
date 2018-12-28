@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+            /* background-image: url('./img/1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%; */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canv" width="400" height="400"></canvas>
+    <script>
+        //获取画布
+        var oCanvas = document.getElementById('canv');
+        var ctx = oCanvas.getContext('2d');
+        var width = oCanvas.width;
+        var height = oCanvas.height;
+
+        // ctx.fillRect(0,0,200,200);
+        // var px = ctx.getImageData(0,0,200,200);
+        // var data = px.data;
+        // var col = px.width;
+        // var row = px.height;
+        // for(var i = 0; i < row;i ++){
+        //     var c = i * col * 4;
+        //     for(var j = 0; j< col; j++){
+        //         data[c + j *4 +3] = 128;
+        //     }
+        // }
+        // //把处理过的像素信息放回到画布当中
+        // ctx.putImageData(px,200,200);
+            ctx.moveTo(50,50);
+            ctx.lineTo(100,100);
+            ctx.lineTo(50,100);
+            ctx.stroke();
+           console.log( ctx.isPointInPath(50,60));
+
+
+
+       </script>
+</body>
+</html>
